@@ -33,13 +33,12 @@
     "test:eslint": "eslint --cache --cache-location node_modules/.cache/.eslintcache --report-unused-disable-directives .",
     "test:stylelint": "stylelint docs/assets/scss/ --cache --cache-location node_modules/.cache/.stylelintcache --rd",
     "test:linkinator": "linkinator _site --recurse --silent --skip \"^(?!http://localhost)\"",
-    "test:lockfile-lint": "lockfile-lint --allowed-hosts npm --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
+    "test:lockfile-lint": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: github: --type npm --path package-lock.json",
     "test:vnu": "node build/vnu-jar.js",
     "test": "npm-run-all docs-build --parallel --aggregate-output --continue-on-error test:*"
   },
   "dependencies": {},
   "devDependencies": {
-    "@twbs/svg-sprite": "^1.6.2",
     "autoprefixer": "^10.2.5",
     "chalk": "^4.1.1",
     "cheerio": "^1.0.0-rc.6",
@@ -56,6 +55,7 @@
     "purgecss": "^4.0.3",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.0",
+    "svg-sprite": "github:svg-sprite/svg-sprite#master",
     "svgo": "^2.3.0",
     "vnu-jar": "21.4.9"
   },
